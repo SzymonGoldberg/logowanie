@@ -60,9 +60,12 @@ exports.signin = (req, res) => {
           });
       }
       //signing token with user id
-      var token = jwt.sign({
+      var token = jwt.sign(
+      {
         id: user.id
-      }, process.env.API_SECRET, {
+      }, 
+      process.env.API_SECRET, 
+      {
         expiresIn: 86400
       });
 

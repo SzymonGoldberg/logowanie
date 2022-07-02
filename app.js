@@ -5,6 +5,8 @@ const express = require("express"),
   mongoose = require("mongoose"),
   userRoutes = require("./routes/user");
 
+require("dotenv").config();
+
 //Connect to database
 try {
   mongoose.connect("mongodb://0.0.0.0:27017/usersdb", {
