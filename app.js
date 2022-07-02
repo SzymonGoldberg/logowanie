@@ -3,9 +3,12 @@
 const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  userRoutes = require("./routes/user");
+  userRoutes = require("./routes/user"),
+  cors = require("cors");
 
 require("dotenv").config();
+
+app.use(cors());
 
 //Connect to database
 try {
