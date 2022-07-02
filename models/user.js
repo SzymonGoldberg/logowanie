@@ -23,10 +23,15 @@ var userSchema = new Schema({
     }
 
   },
-  role: {
-    type: String,
-    enum: ["normal", "admin"],
-    required: [true, "Please specify user role"]
+  games_played: {
+    type: Number,
+    min: 0,
+    required: true
+  },
+  win_games: {
+    type: Number,
+    min: 0,
+    required: true
   },
   password: {
     type: String,

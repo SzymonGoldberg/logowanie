@@ -7,6 +7,8 @@ exports.signup = (req, res) => {
     fullName: req.body.fullName,
     email: req.body.email,
     role: req.body.role,
+    games_played: 0,
+    win_games: 0,
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
