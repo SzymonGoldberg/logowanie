@@ -10,6 +10,7 @@ require("dotenv").config();
 
 app.use(cors());
 
+//"mongodb+srv://developer:W3SAcHumBleyv5yn@pki-zadanie.mrsv1dq.mongodb.net/?retryWrites=true&w=majority"
 //Connect to database
 try {
   mongoose.connect("mongodb://0.0.0.0:27017/usersdb", {
@@ -36,6 +37,6 @@ app.use(express.urlencoded({
 app.use(userRoutes);
 
 //setup server to listen on port 8080
-app.listen(process.env.PORT || 8080, () => {
-  console.log("Server is live on port 8080");
+app.listen(process.env.PORT, () => {
+  console.log("Server is live on port" + process.env.PORT);
 })

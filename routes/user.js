@@ -6,6 +6,8 @@ var express = require("express"),
     signin
   } = require("../controllers/auth.controller.js");
 
+  var User = require("../models/user");
+
 router.post("/register", signup, function (req, res) {
 
 });
@@ -15,13 +17,14 @@ router.post("/login", signin, function (req, res) {
 });
 
 router.get("/hiddencontent", verifyToken, function (req, res) {
-  if (!user) {
+  if (!req.user) {
     res.status(403)
       .send({
         message: "Invalid JWT token"
       });
+      return;
   }
-  if (req.user == "admin") {
+  if (req.user.role == "admin") {
     res.status(200)
       .send({
         message: "Congratulations! but there is no hidden content"
