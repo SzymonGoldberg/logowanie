@@ -10,10 +10,9 @@ require("dotenv").config();
 
 app.use(cors());
 
-//"mongodb+srv://developer:W3SAcHumBleyv5yn@pki-zadanie.mrsv1dq.mongodb.net/?retryWrites=true&w=majority"
 //Connect to database
 try {
-  mongoose.connect("mongodb://0.0.0.0:27017/usersdb", {
+  mongoose.connect("mongodb+srv://developer:W3SAcHumBleyv5yn@pki-zadanie.mrsv1dq.mongodb.net/?retryWrites=true&w=majority", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     serverSelectionTimeoutMS: 1000
